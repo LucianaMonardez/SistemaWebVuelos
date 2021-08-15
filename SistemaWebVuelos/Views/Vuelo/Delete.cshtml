@@ -1,0 +1,45 @@
+﻿@model SistemaWebVuelos.Models.Vuelo
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+    <h3>Estas seguro de querer eliminar el vuelo?</h3>
+    <div>
+        <h4>Vuelo</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Fecha): + "         " + @Html.DisplayFor(model => model.Fecha)
+            </dt>  
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Destino):            @Html.DisplayFor(model => model.Destino)
+            </dt>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Origen):             @Html.DisplayFor(model => model.Origen)
+            </dt>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Matricula):             @Html.DisplayFor(model => model.Matricula)
+            </dt>
+    
+        </dl>
+    
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+    
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+</body>
+</html>

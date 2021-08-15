@@ -1,0 +1,58 @@
+﻿@model IEnumerable<SistemaWebVuelos.Models.Vuelo>
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Vuelos</title>
+</head>
+<body>
+    <p id="createnew">
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Fecha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Destino)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Origen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Matricula)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fecha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Destino)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Origen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Matricula)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.idVuelo }) |
+                @Html.ActionLink("Details", "Detail", new { id=item.idVuelo }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.idVuelo }) |
+                @Html.ActionLink("Traer por destino", "TraerPorDestino", new { destino = item.Destino }) |
+                @Html.ActionLink("Traer por matricula", "TraerPorMatricula", new { matricula = item.Matricula})
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

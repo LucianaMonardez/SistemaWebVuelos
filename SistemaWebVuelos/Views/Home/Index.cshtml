@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+
+<h2>@ViewData["msj"]</h2>
+
+<h3>Fecha: @ViewBag.FechaHora</h3>
+
+@*<div id="Vuelo">
+    @Html.ActionLink("Ir a vuelos", "Index", new { id = item.idVuelo })
+</div>*@
+
+
+@section sidebar
+    {
+    <p>Zona editable</p>
+    <p>Opcional</p>
+}

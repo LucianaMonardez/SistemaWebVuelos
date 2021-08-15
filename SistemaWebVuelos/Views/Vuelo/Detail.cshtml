@@ -1,0 +1,39 @@
+﻿@model SistemaWebVuelos.Models.Vuelo
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Detail</title>
+</head>
+<body>
+    <div>
+        <h4>Vuelo</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Fecha): @Html.DisplayFor(model => model.Fecha)
+            </dt>
+   
+            <dt>
+                @Html.DisplayNameFor(model => model.Destino): @Html.DisplayFor(model => model.Destino)
+            </dt>   
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Origen): @Html.DisplayFor(model => model.Origen)
+            </dt>
+  
+            <dt>
+                @Html.DisplayNameFor(model => model.Matricula): @Html.DisplayFor(model => model.Matricula)
+            </dt>
+            
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.idVuelo }) |
+        @Html.ActionLink("Volver a vuelos", "Index")
+    </p>
+</body>
+</html>

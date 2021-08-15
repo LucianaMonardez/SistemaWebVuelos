@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+    <div id="header">
+        <h1 id="Titulo">Sistema Vuelo</h1>
+    </div>
+    <div id="nav">
+        @Html.ActionLink("Home", "Index", "Home")
+        @Html.ActionLink("Vuelos", "Index", "Vuelo")
+    </div>
+    <div id="content">
+        <div id="sidebar">
+            @if (IsSectionDefined("sidebar"))
+            {
+            @RenderSection("sidebar")
+            }
+            else
+            {
+            }
+        </div>
+        @RenderBody()
+    </div>
+    <div id="footer">
+        <h4 id="footermail">Info@vuelos.com</h4>
+    </div>
+</body>
+</html>
